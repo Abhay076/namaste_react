@@ -1956,78 +1956,9 @@ const resList = [
     subtype: "basic",
   },
 ];
-const resObj = {
-  type: "restaurant",
-  data: {
-    id: "65797",
-    name: "Leon's - Burgers & Wings (Leon Grill)",
-    cloudinaryImageId:
-      "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/2/4c1e29e2-fecf-41b6-8b21-5a58338247fe_65797.jpg",
-    locality: "Koramangala",
-    areaName: "Koramangala",
-    costForTwo: "₹300 for two",
-    cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
-    avgRating: 4.4,
-    parentId: "371281",
-    avgRatingString: "4.4",
-    totalRatingsString: "10K+",
-    promoted: true,
-    adTrackingId:
-      "cid=14523215~p=0~adgrpid=14523215#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=65797~eid=07505402-e03b-4275-aabc-279055a729ed~srvts=1718704103166~collid=45995",
-    sla: {
-      deliveryTime: 19,
-      lastMileTravel: 1.3,
-      serviceability: "SERVICEABLE",
-      slaString: "15-20 mins",
-      lastMileTravelString: "1.3 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-    availability: {
-      nextCloseTime: "2024-06-19 04:00:00",
-      opened: true,
-    },
-    badges: {},
-    isOpen: true,
-    type: "F",
-    badgesV2: {
-      entityBadges: {
-        textBased: {},
-        imageBased: {},
-        textExtendedBadges: {},
-      },
-    },
-    aggregatedDiscountInfoV3: {
-      header: "50% OFF",
-      subHeader: "UPTO ₹100",
-    },
-    differentiatedUi: {
-      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-      differentiatedUiMediaDetails: {
-        mediaType: "ADS_MEDIA_ENUM_IMAGE",
-        lottie: {},
-        video: {},
-      },
-    },
-    reviewsSummary: {},
-    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    restaurantOfferPresentationInfo: {},
-    externalRatings: {
-      aggregatedRating: {
-        rating: "4.4",
-        ratingCount: "1K+",
-      },
-      source: "GOOGLE",
-      sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
-    },
-    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
-  },
-  analytics: {},
-  cta: {
-    link: "swiggy://menu?restaurant_id=65797",
-    text: "RESTAURANT_MENU",
-    type: "DEEPLINK",
-  },
-};
+
+
+// Not using keys (not acceptable) <<<< index as keys <<<<<<<<<<<<<<< uinque id (best practice)
 
 const Body = () => {
   return (
@@ -2037,17 +1968,6 @@ const Body = () => {
         {resList.map((restaurant) => (
           <RestaurantCard key={restaurant.data.id} resData={restaurant} />
         ))}
-        {/* <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
-        <RestaurantCard resData={resList[3]} />
-        <RestaurantCard resData={resList[4]} />
-        <RestaurantCard resData={resList[5]} />
-        <RestaurantCard resData={resList[6]} />
-        <RestaurantCard resData={resList[7]} />
-        <RestaurantCard resData={resList[8]} /> */}
-
-        {/* <RestaurantCard resName="KFC" cuisine="Berger, Fast Food" /> */}
       </div>
     </div>
   );
