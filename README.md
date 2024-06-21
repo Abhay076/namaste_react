@@ -43,12 +43,18 @@
 
 - Default Export/Import
 
-* export default Component;
-* import Component from "path";
+export default Component;
+import Component from "path";
 
 
 - Named Export/Import
 
-* export const Component;
-* import {Component} from "path";
+export const Component;
+import {Component} from "path";
 
+
+
+### React Hooks
+  (NormalJS utility function)
+ - useState() - Superpowerful State Variables in react
+ - useEffect()
