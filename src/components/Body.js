@@ -3,16 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 const Body = () => {
   //Local State Variable - Super powerful Variable
-  const arr = useState(resList);
-
-  //arrays destructuring
   const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
-
-
- // const [listOfRestaurants,setlistOfRestaurants]=arr;
-//
-  const listOfRestaurants=arr[0];
-  const setlistOfRestaurants=arr[1];
 
   return (
     <div className="body">
@@ -24,7 +15,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4
             );
-            setlistOfRestaurants(filteredList); 
+            setlistOfRestaurants(filteredList);
           }}
         >
           Top Rated Restaurant
