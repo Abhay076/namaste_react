@@ -1,43 +1,18 @@
 import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-// import resList from "../utils/mockData";
+import resList from "../utils/mockData";
 const Body = () => {
   //Local State Variable - Super powerful Variable
-  const [listOfRestaurants, setlistOfRestaurants] = useState([
-    {
-      data: {
-        id: "334475",
-        name: "KFC",
-        cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-        cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
-        costForTwoString: "₹400 FOR TWO",
-        deliveryTime: 36,
-        avgRating: "3.8",
-      },
-    },
-    {
-      data: {
-        id: "334476",
-        name: "Dominos",
-        cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-        cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
-        costForTwoString: "₹400 FOR TWO",
-        deliveryTime: 36,
-        avgRating: "4.5",
-      },
-    },
-    {
-      data: {
-        id: "334477",
-        name: "MCD",
-        cloudinaryImageId: "bdcd233971b7c81bf77e1fa4471280eb",
-        cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
-        costForTwoString: "₹400 FOR TWO",
-        deliveryTime: 36,
-        avgRating: "4.1",
-      },
-    },
-  ]);
+  const arr = useState(resList);
+
+  //arrays destructuring
+  const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
+
+
+ // const [listOfRestaurants,setlistOfRestaurants]=arr;
+//
+  const listOfRestaurants=arr[0];
+  const setlistOfRestaurants=arr[1];
 
   return (
     <div className="body">
@@ -49,7 +24,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.data.avgRating > 4
             );
-            setlistOfRestaurants(filteredList);
+            setlistOfRestaurants(filteredList); 
           }}
         >
           Top Rated Restaurant
