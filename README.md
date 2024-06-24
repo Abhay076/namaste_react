@@ -57,4 +57,4 @@ import {Component} from "path";
 ### React Hooks
   (NormalJS utility function)
  - useState() - Superpowerful State Variables in react
- - useEffect()
+ - useEffect() - page load => render => make Api => rerender
