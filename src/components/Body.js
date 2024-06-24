@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 const Body = () => {
   //Local State Variable - Super powerful Variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -14,10 +15,15 @@ const Body = () => {
     );
     const json = await data.json();
     setlistOfRestaurants(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(json);
   };
+
+  if (listOfRestaurants.length === 0) {
+    return<Shimmer />
+    ;
+  }
 
   return (
     <div className="body">
