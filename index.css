@@ -48,6 +48,10 @@
     cursor: pointer;
 }
 
+.login{
+    padding: 0 20px;
+    cursor: pointer;
+}
 
 
 /* shimmer */
@@ -113,3 +117,5 @@
   .m-t-24 {
       margin-top: 24px;
   }
+
+
