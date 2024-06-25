@@ -2,7 +2,7 @@ import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
-  const [btnName, setbtnName] = useState("login");
+  const [btnName, setbtnName] = useState("Login");
 
   return (
     <div className="header">
@@ -18,7 +18,7 @@ const Header = () => {
           <button
             className="login"
             onClick={() => {
-              setbtnName("logout");
+              btnName === "Login" ? setbtnName("Logout") : setbtnName("Login");
             }}
           >
             {btnName}
