@@ -25,8 +25,6 @@ const Body = () => {
     );
   };
 
- 
-
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -60,9 +58,9 @@ const Body = () => {
           onClick={() => {
             //fileter function
             const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.1
+              (res) => res.info.avgRating > 4.5
             );
-            setlistOfRestaurants(filteredList);
+            setFilteredListRestaturants(filteredList);
           }}
         >
           Top Rated Restaurant
