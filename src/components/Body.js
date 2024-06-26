@@ -5,6 +5,8 @@ const Body = () => {
   //Local State Variable - Super powerful Variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredListRestaturants, setFilteredListRestaturants] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  //whenever static variable update, react triggers a reconciliation cycle (re-render the component)
 
   useEffect(() => {
     fetchData();
@@ -23,9 +25,7 @@ const Body = () => {
     );
   };
 
-  const [searchText, setSearchText] = useState("");
-
-  //whenever static variable update, react triggers a reconciliation cycle (re-render the component)
+ 
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
