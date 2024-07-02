@@ -64,10 +64,124 @@
 }    
 
 
+.menu-cart{
+    width: 302px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid beige;
+    border-radius: 20px;
+}
+
+.cuisine{
+    margin: -15px 10px;
+    text-decoration: underline;
+    color: rgb(241, 87, 0);
+    font-weight: 700;
+    /* margin: -7px 018px; */
+    margin: -7px 20px;
+}
+.rating{
+    padding: 0px  10px;
+    margin: 10px;
+}
+.deals{
+    display: flex;
+    
+}
+.div1{
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid beige;
+}
+
+.div2{
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color:white;
+    border: 2px solid beige;
+}
+.div3{
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color:white;
+    border: 2px solid beige;
 
 
+}
 
+.text{
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 300;
+    font-weight: bold;
+    margin: 10px;
+}
+.text1{
+    margin: -9px 40px 60px 40px;
+    color: grey;
+    font-weight: bold;
+}
 
+.menu1{
+    height: 200px;
+    width: 700px;
+    border: 2px solid gray;
+    margin: 10px;
+    border-radius: 20px;
+    /* background-color:white;
+    border: 2px solid beige;
+    /* margin: 20px; 
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-between; 
+    */
+}
+.desc{
+    margin:140px 0px 0px 0px;
+    margin-left: -50px;
+    padding-right: 100px;
+    text-align: left;
+    /* display: flex; */
+    overflow: visible;
+    
+}
+/* .menu2{
+    height: 100px;
+    width: 900px;
+    background-color: turquoise;
+} */
+
+.menu-logo{
+    /* width: 100%; */
+    height: 100px;
+    width: 200px;
+    /* text-align: right; */
+    /* align-items: center; */
+    float: right;
+    /* margin-bottom: 10px; */
+    margin-top: -110px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+.ratings{
+    color: rgb(27, 166, 114);
+}
+
+.descri{
+    color: rgba(2, 6, 12, 0.6);
+    font-family: sans-serif;
+    letter-spacing: -0.3px;
+    font-weight: 200;
+    /* font-size: 17px; */
+}
 
 
 
