@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import useOnlineState from "../utils/useOnlineState";
 const Body = () => {
   //Local State Variable - Super powerful Variable
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredListRestaturants, setFilteredListRestaturants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const useOnline = useOnlineState();
   //whenever static variable update, react triggers a reconciliation cycle (re-render the component)
 
   useEffect(() => {
@@ -26,6 +28,14 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if (useOnline === false) {
+    return (
+      <h1>
+        Looks like you are offline!!, Please check your internet connection
+      </h1>
+    );
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
