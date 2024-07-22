@@ -40,19 +40,19 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="v">
+      <div className="flex">
+        <div className="search  m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="mt-1 px-10 py-1 bg-white border shadow-sm border-slate-300 placeholder-slate-500 focus:outline-none focus:border-sky-500 focus:ring-sky-500  rounded-md sm:text-sm focus:ring-1"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-btn"
+            className="h-8 px-7 font-semibold rounded-md bg-black text-white m-4"
             onClick={() => {
               // filter the restaurant card and update UI
               console.log(searchText);
@@ -65,20 +65,23 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            //fileter function
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.5
-            );
-            setFilteredListRestaturants(filteredList);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+        <div className="items-center">
+          <button
+            className="bg-green-500 px-14 py-2 m-11 font-semibold rounded-md mr-10 "
+            onClick={() => {
+              //fileter function
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4.5
+              );
+              setFilteredListRestaturants(filteredList);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+
+      <div className=" flex flex-wrap ml-28 ">
         {filteredListRestaturants.map((restaurant) => (
           <Link
             style={{ textDecoration: "none", color: "black" }}
