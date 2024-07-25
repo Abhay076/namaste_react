@@ -9,6 +9,7 @@ const RestaurantCard = (props) => {
     costForTwoString,
     sla,
   } = resData?.info;
+
   return (
     <div className=" w-[250px] m-4 p-2  rounded-lg bg-gray-100 hover:bg-gray-200 hover:border border-solid border-black">
       <img
@@ -27,6 +28,21 @@ const RestaurantCard = (props) => {
       <h4>{sla?.slaString}</h4>
     </div>
   );
+};
+
+// High Order Component
+
+// input - RestaurantCard => RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestaurantCard {...props}/>
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import useOnlineState from "../utils/useOnlineState";
 const Body = () => {
@@ -8,8 +8,13 @@ const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filteredListRestaturants, setFilteredListRestaturants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  //High Order Component
+  const RestaurantCardPromted = withPromotedLabel(RestaurantCard);
+
   const useOnline = useOnlineState();
   //whenever static variable update, react triggers a reconciliation cycle (re-render the component)
+
+  console.log(listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -22,10 +27,10 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     setlistOfRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredListRestaturants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -88,7 +93,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.data.promoted ? (
+              <RestaurantCardPromted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
