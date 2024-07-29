@@ -27,10 +27,10 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     setlistOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredListRestaturants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -93,11 +93,7 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            {restaurant.data.promoted ? (
-              <RestaurantCardPromted resData={restaurant} />
-            ) : (
-              <RestaurantCard resData={restaurant} />
-            )}
+            <RestaurantCard resData={restaurant} />
           </Link>
         ))}
       </div>
